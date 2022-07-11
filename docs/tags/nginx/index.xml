@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on Boyu Blog</title>
+    <link>http://www.caiboyu.online/tags/nginx/</link>
+    <description>Recent content in Nginx on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RTMP</title>
+      <link>http://www.caiboyu.online/2022/6/16/Nginx/RTMP/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/16/Nginx/RTMP/</guid>
+      <description>RTMP Real Time Messaging Protocol（实时消息传输协议） 协议基础 特点： 依赖TCP 通过握手建立安全连接 建立网络流 播放 RTMP vs TCP RTMP 将数据格式格式化 RTMP 将 message 分成多个</description>
+    </item>
+    
+  </channel>
+</rss>

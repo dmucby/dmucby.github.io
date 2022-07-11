@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Boyu Blog</title>
+    <link>http://www.caiboyu.online/categories/</link>
+    <description>Recent content in Categories on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech</title>
+      <link>http://www.caiboyu.online/categories/tech/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speech</title>
+      <link>http://www.caiboyu.online/categories/speech/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/categories/speech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toy</title>
+      <link>http://www.caiboyu.online/categories/toy/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/categories/toy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Power</title>
+      <link>http://www.caiboyu.online/categories/power/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/categories/power/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
