@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body);
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body);
+    });
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Boyu Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://www.caiboyu.online/img/pexels-pixabay-462024.jpg">
+    <meta property="twitter:image" content="http://www.caiboyu.online/img/pexels-pixabay-462024.jpg" />
+    
+
+    
+    <meta name="title" content="P4 DDoS Defense" />
+    <meta property="og:title" content="P4 DDoS Defense" />
+    <meta property="twitter:title" content="P4 DDoS Defense" />
+    
+
+    
+    <meta name="description" content="基于P4的DDoS跳变流量清洗数据">
+    <meta property="og:description" content="基于P4的DDoS跳变流量清洗数据" />
+    <meta property="twitter:description" content="基于P4的DDoS跳变流量清洗数据" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="蔡博宇, caiboyu, Caiboyu, Caiboyu Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>P4 DDoS Defense-蔡博宇的博客 | Caiboyu Blog</title>
+
+    <link rel="canonical" href="/2022/04/18/P4/SYN&#43;ECMP/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Boyu Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/power">power</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/speech">speech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/toy">toy</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/programming/script/post-bg-unix-linux.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/p4" title="P4">
+                            P4
+                        </a>
+                        
+                    </div>
+                    <h1>P4 DDoS Defense</h1>
+                    <h2 class="subheading">SYN-Flood Defense based P4</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Boyu Cai
+                             
+                            on 
+                            Saturday, April 30, 2022
+                            
+                                <span id="/2022/04/18/P4/SYN&#43;ECMP/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("mbqHPRyW3DvDuqylkTirIwqC-MdYXbMMI", "TmmcPFNubBRYD1RLTnuzFkEU");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="syn-ecmp">SYN+ ECMP</h1>
+<h2 id="idea">Idea</h2>
+<h3 id="ecmp">ECMP:</h3>
+<p>根据数据包传输路径和地址来计算哈希值，并对哈希值进行求模运算，将值与端口进行映射，来达到随机情况下的链路数据包的负载均衡。</p>
+<h3 id="syn-defense">SYN Defense</h3>
+<p>基于P4的寄存器来对SYN进行计数，防御策略请阅读<a href="https://github.com/dmucby/P4-Defense/tree/master/SYN%20%E9%98%B2%E6%B4%AA">SYN DEFENSE</a>，在此处我们进行对防御流表周期性的替换，让攻击者难以获取防御节点和防御策略，通过<code>P4-Utils</code>控制器来对交换机的流表进行随即替换。</p>
+<h2 id="topology">Topology</h2>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/multi_hop_topo.png" alt="multi_hop_topo">
+
+</p>
+<ul>
+<li><code>s1</code> <code>s6</code> 交换机负责安装负载均衡计算流表</li>
+<li><code>s2 </code> <code>s3</code> <code>s4</code> <code>s5</code> 负责进行数据包的清洗</li>
+</ul>
+<h2 id="p4-switch">P4 Switch</h2>
+<h3 id="ecmp-implementation">ECMP Implementation</h3>
+<p>使用<a href="https://github.com/p4lang/p4c/blob/main/p4include/v1model.p4">v1mode</a>内置哈希函数进行哈希值的计算，通过对<code>ipv4.srcAddr</code>、<code>ipv4.dstAddr</code>、<code>tcp.srcPort</code> <code>tcp.dstPort</code> 、<code>ipv4.protocol</code>进行哈希计算，通过设置最大值<code>4</code>，将结果控制在0~3之间。然后在流表中建立端口与哈希值的单值映射。</p>
+<h4 id="p4-code">P4 Code:</h4>
+<pre tabindex="0"><code class="language-p4" data-lang="p4">hash(meta.ecmp_hash,
+	    HashAlgorithm.crc16,
+	    (bit&lt;1&gt;)0,
+	    {
+          hdr.ipv4.srcAddr,
+	      hdr.ipv4.dstAddr,
+          hdr.tcp.srcPort,
+          hdr.tcp.dstPort,
+          hdr.ipv4.protocol
+        },
+	      num_nhops);
+</code></pre><p><strong>详细参数如下：</strong></p>
+<pre tabindex="0"><code class="language-p4" data-lang="p4">@pure
+extern void hash&lt;O, T, D, M&gt;(out O result, in HashAlgorithm algo, in T base, in D data, in M max);
+</code></pre><h4 id="table-rule">Table rule</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>table_add ecmp_group_to_nhop set_nhop 1 0 =&gt;  00:00:00:02:01:00 2
+</span></span><span style="display:flex;"><span>table_add ecmp_group_to_nhop set_nhop 1 1 =&gt;  00:00:00:03:01:00 3
+</span></span><span style="display:flex;"><span>table_add ecmp_group_to_nhop set_nhop 1 2 =&gt;  00:00:00:04:01:00 4
+</span></span><span style="display:flex;"><span>table_add ecmp_group_to_nhop set_nhop 1 3 =&gt;  00:00:00:05:01:00 5
+</span></span></code></pre></div><p>在流表中，我们将哈希值<code>0</code>与<code>2</code>号端口映射，其余值类推可得。</p>
+<h3 id="syn-defense-1">SYN-Defense</h3>
+<p>核心代码与<a href="https://github.com/dmucby/P4-Defense/tree/master/SYN%20%E9%98%B2%E6%B4%AA">SYN DEFENSE</a>类似，在此不再赘述。</p>
+<p>详细代码参照https://github.com/dmucby/P4-Defense/tree/master/SYN%2BECMP</p>
+<h2 id="controller">Controller</h2>
+<p>借用<code>P4-Utils</code>天生对<code>P4</code>交换机的支持，我们进行如下设定，在一段周期内，控制器将随机对<code>s2 </code> <code>s3</code> <code>s4</code> <code>s5</code> 交换机进行随机选择两个交换机部署防御流表规则，在进行下一周期时，交换机需要重置，因此我们需要补充转发流表规则。</p>
+<h3 id="defense-deployment">Defense deployment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>nums <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>table1 <span style="color:#ff79c6">=</span> random<span style="color:#ff79c6">.</span>randint(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">4</span>)
+</span></span><span style="display:flex;"><span>table2 <span style="color:#ff79c6">=</span> random<span style="color:#ff79c6">.</span>randint(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">4</span>)
+</span></span><span style="display:flex;"><span>nums[table1] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>nums[table2] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">6</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">if</span>(nums[i] <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>):
+</span></span><span style="display:flex;"><span>      sw <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;s&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(i)
+</span></span><span style="display:flex;"><span>      self<span style="color:#ff79c6">.</span>controller[sw]<span style="color:#ff79c6">.</span>table_add(<span style="color:#f1fa8c">&#34;syn_counters&#34;</span>, <span style="color:#f1fa8c">&#34;syn_defence_action&#34;</span>, [<span style="color:#f1fa8c">&#34;1&#34;</span>])
+</span></span></code></pre></div><h2 id="experimental">Experimental</h2>
+<p>我们使用同样的攻击工具<code>hping3</code>，让<code>h1</code>对<code>h2</code>发动<code>SYN-Flood</code>的<code>DDoS</code>攻击，通过监控数据包的流量来查看防御效果，由于个人电脑内存限制，我们只进行<strong>百万数据包</strong>级别的攻击测试。</p>
+<p>在<code>h1</code>终端使用如下攻击命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hping3 -q -n -S -p <span style="color:#bd93f9">5001</span> --faster 10.0.6.2 
+</span></span></code></pre></div><h3 id="result">Result</h3>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220429180843.png" alt="微信截图_20220429180843">
+
+</p>
+<p>通过实验结果可看出，<code>h1</code>向<code>s1-eth1</code>端口发出攻击数据包，然后<code>s2</code> <code>s3</code> <code>s4</code> <code>s4</code> 均衡收集到数据包，并从出口<code>eth2</code>看出数据包进行清洗，<code>s6</code>从<code>eth2</code>端口收到了少量的攻击包。</p>
+<h2 id="experimental-summary">Experimental summary</h2>
+<p>由于策略的设定，主机可能会收到少部分攻击流数据包，但由于只部署部分防御流表规则，大大减少了防御开销，对于这样的结果，也可以接受。但本实验存在一定漏洞，需要在后续工作中进行改正。</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/04/28/java-Design-pattern-Iterator/" data-toggle="tooltip" data-placement="top" title="Iterator Design">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/5/20/Spech/RTMP/" data-toggle="tooltip" data-placement="top" title="Saty Hungry Stay Foolish">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+<script src="https://giscus.app/client.js"
+        data-repo=""
+        data-repo-id=""
+        data-category=""
+        data-category-id=""
+        data-mapping=""
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-theme=""
+        data-lang=""
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/inspired" title="inspired">
+                            inspired
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/java" title="java">
+                            java
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/math" title="math">
+                            math
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/network" title="network">
+                            network
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nginx" title="nginx">
+                            nginx
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/p4" title="p4">
+                            p4
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/philosophy" title="philosophy">
+                            philosophy
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/scripts" title="scripts">
+                            scripts
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:cbyhlc@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/BoyuCai4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/wechat_qrcode%20.jpg">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/dmucby">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.cn/incareer/in/boyu-cai-141484227">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/17031721/dmu-cby">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Boyu Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Boyu Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

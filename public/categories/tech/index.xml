@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Boyu Blog</title>
+    <link>http://www.caiboyu.online/categories/tech/</link>
+    <description>Recent content in Tech on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information Entropy</title>
+      <link>http://www.caiboyu.online/2022/6/27/Math/Pleasing/Entropy/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/27/Math/Pleasing/Entropy/</guid>
+      <description>Information Entropy QA 或许一直都有一个疑问，升入大学信息是一个非常宝贵的财富，我们都知道某些关键的信息或许真能改变一生，但是我们如何分辨哪些是关键信息，或者</description>
+    </item>
+    
+    <item>
+      <title>Hidden Markov Model</title>
+      <link>http://www.caiboyu.online/2022/6/16/Math/Pleasing/HMM/</link>
+      <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/16/Math/Pleasing/HMM/</guid>
+      <description>Hidden Markov Model 在哲学的意义上，这是人类认识的一个飞跃！ 马尔可夫模型是一个并不复杂，且在自然语言处理领域最为快捷有效的方法，它通过概率的计算解决了生活</description>
+    </item>
+    
+    <item>
+      <title>RTMP</title>
+      <link>http://www.caiboyu.online/2022/6/16/Nginx/RTMP/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/16/Nginx/RTMP/</guid>
+      <description>RTMP Real Time Messaging Protocol（实时消息传输协议） 协议基础 特点： 依赖TCP 通过握手建立安全连接 建立网络流 播放 RTMP vs TCP RTMP 将数据格式格式化 RTMP 将 message 分成多个</description>
+    </item>
+    
+    <item>
+      <title>P4 DDoS Defense</title>
+      <link>http://www.caiboyu.online/2022/04/18/P4/SYN&#43;ECMP/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/18/P4/SYN&#43;ECMP/</guid>
+      <description>SYN+ ECMP Idea ECMP: 根据数据包传输路径和地址来计算哈希值，并对哈希值进行求模运算，将值与端口进行映射，来达到随机情况下的链路数据包的负载均衡。 SYN Defense 基于P</description>
+    </item>
+    
+    <item>
+      <title>Iterator Design</title>
+      <link>http://www.caiboyu.online/2022/04/28/java-Design-pattern-Iterator/</link>
+      <pubDate>Thu, 28 Apr 2022 12:58:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/28/java-Design-pattern-Iterator/</guid>
+      <description>迭代器模式 核心思想 提供外部访问接口，而不暴露内部对象 可扩展的遍历方式 可遍历不同种类的对象 类图设计 Aggregate：聚集的抽象类 Concre</description>
+    </item>
+    
+    <item>
+      <title>Python Script Study</title>
+      <link>http://www.caiboyu.online/2022/04/18/script/python/</link>
+      <pubDate>Mon, 18 Apr 2022 15:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/18/script/python/</guid>
+      <description>Python Script 核心语法 注释 #!/usr/bin/python3 # 第一个注释 &amp;#39;&amp;#39;&amp;#39; 注释 &amp;#39;&amp;#39;&amp;#39; print(&amp;#34;Hello,Python!&amp;#34;) 复杂项目 长期维护 输入输出 python实现 str = input(&amp;#34;please input:&amp;#34;) print() bash实现 echo &amp;#34;please input&amp;#34; read str if逻辑 if command: x elif command2: y else: 文件读</description>
+    </item>
+    
+    <item>
+      <title>Shell Script Study</title>
+      <link>http://www.caiboyu.online/2022/04/18/script/shell/</link>
+      <pubDate>Mon, 18 Apr 2022 15:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/18/script/shell/</guid>
+      <description>Shell Shell 简介 Linux 系统界面，而不涉及到Linux内核 shell 脚本 = shell命令+ shell特性 + 流程控制 流程 用户输入命令 解释命令 在内核中执行然后返回结果</description>
+    </item>
+    
+  </channel>
+</rss>

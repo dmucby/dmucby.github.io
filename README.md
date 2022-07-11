@@ -1,37 +1,77 @@
-## Welcome to GitHub Pages
+# MyBlog
 
-You can use the [editor on GitHub](https://github.com/dmucby/dmucby.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Access address of the website
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> Welcome to explore！
 
-### Markdown
+address: [Boyu Blog](https://www.caiboyu.online/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Dev + Ops
 
-- Bulleted
-- List
+### Hugo
 
-1. Numbered
-2. List
+个人博客由[Hugo](https://gohugo.io/)生成，Hugo是一个简单简洁的网站构建工具。
 
-**Bold** and _Italic_ and `Code` text
+使用`Hugo`之前你需要有以下环境：
 
-[Link](url) and ![Image](src)
-```
+* Git
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+* Go
 
-### Jekyll Themes
+* node.js
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dmucby/dmucby.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### Build website
 
-### Support or Contact
+1. 切换到你的目录下
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+2. 键入命令生成站点：
+
+   ```bash
+   hugo new site yourname
+   ```
+
+   查看其目录结构：
+
+   ```xml
+   +------------
+   │  config.toml # 配置文件
+   ├─archetypes
+   │      default.md
+   ├─content # 存放文章
+   ├─data 
+   ├─layouts
+   ├─static # 静态资源：图片等
+   └─themes # 存放Hugo主题
+   ```
+
+3. 添加主题：
+
+   依据各主题自带`README.md`文件进行添加，通常包括：
+
+   ```bash
+   cd themes
+   git clone XXXX
+   ```
+
+   个人博客：https://link.zhihu.com/?target=https%3A//themes.gohugo.io/hugo-theme-dream/
+
+4. 本地运行：
+
+   ```bash
+   hugo server
+   ```
+
+5. 访问本地链接：http://localhost:1313/
+
+### launched
+
+* 域名购买
+* 网站备案
+* SSL证书申请
+* Nginx部署
+
+参考博客：https://www.vpsss.net/19231.html
+
+  

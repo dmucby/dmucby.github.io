@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+</script>
+
+<script src='https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body);
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body);
+    });
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Boyu Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://www.caiboyu.online/img/pexels-pixabay-462024.jpg">
+    <meta property="twitter:image" content="http://www.caiboyu.online/img/pexels-pixabay-462024.jpg" />
+    
+
+    
+    <meta name="title" content="一个治疗「大学没动力」的奇技淫巧" />
+    <meta property="og:title" content="一个治疗「大学没动力」的奇技淫巧" />
+    <meta property="twitter:title" content="一个治疗「大学没动力」的奇技淫巧" />
+    
+
+    
+    <meta name="description" content="失败-分析原因-重拾Flag-获得小成功">
+    <meta property="og:description" content="失败-分析原因-重拾Flag-获得小成功" />
+    <meta property="twitter:description" content="失败-分析原因-重拾Flag-获得小成功" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="蔡博宇, caiboyu, Caiboyu, Caiboyu Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>一个治疗「大学没动力」的奇技淫巧-蔡博宇的博客 | Caiboyu Blog</title>
+
+    <link rel="canonical" href="/2022/04/06/Power/Self-Improvement/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Boyu Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/power">power</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/speech">speech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/toy">toy</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/article/runman.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/inspired" title="inspired">
+                            inspired
+                        </a>
+                        
+                    </div>
+                    <h1>一个治疗「大学没动力」的奇技淫巧</h1>
+                    <h2 class="subheading">不好意思 真香！</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                阿步
+                             
+                            on 
+                            Wednesday, April 6, 2022
+                            
+                                <span id="/2022/04/06/Power/Self-Improvement/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("mbqHPRyW3DvDuqylkTirIwqC-MdYXbMMI", "TmmcPFNubBRYD1RLTnuzFkEU");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="一个治疗大学没动力的奇技淫巧">一个治疗「大学没动力」的奇技淫巧</h1>
+<blockquote>
+<p>封面：Wallhaven    阅读约需6分钟</p>
+</blockquote>
+<p>此文为阅读公众号推文之余发现，略有所感，故转发于博客。</p>
+<h2 id="正文">正文</h2>
+<p>　　从今年年初开始，我有两件事做失败了。一是工作上的一个flag，另一个是很小的生活小习惯。</p>
+<p>　　它俩有个共同特点：<strong>就算没做到的话，也没有什么严重恶果，至少现在没有。</strong></p>
+<p>　　你一定发现大学里也一样，有很多「做了有好处，不做也没坏处」的事情很难坚持。</p>
+<p>　　比如每天听一两个VOA新闻、做一做全身拉伸，或者每天读几页书等等，这种Flag的失败率就很高。</p>
+<p>　　这篇文章是我「失败-分析原因-重拾Flag-获得小成功」的全过程，如果你也总是<strong>立下了目标但没动力执行</strong>，这篇文章会帮到你。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640.png" alt="">
+
+</p>
+<p>　　我失败的这两件事，一是每天做一次颈椎操，因为今年明显感到脖子不得劲的频率越来越高。</p>
+<p>　　二是养成“快速搞定”的意识。我对于「<strong>没有难度的小事</strong>」总是缺乏速度，比如查个资料，明明可以很利索地搞定，结果总是白搭进去很多时间。</p>
+<p>　　这两个小目标，从年初开始一直到2月底都处于摆烂状态，三天打鱼两天晒网，没有任何效果。</p>
+<p>　　在成功之前，我已经试过了2种失败的方案。</p>
+<p>　　<strong>ps.希望你一定好好看看这2种失败的方案，给自己避个雷。</strong></p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/image-20220618095727952.png" alt="image-20220618095727952">
+
+</p>
+<p>　　以「养成快速搞定的意识」为例：</p>
+<p>　　<strong>方案一</strong>用监控时间的APP提醒自己耗费在每件事上的时间，以此推动自己提速。</p>
+<p>　　我大学一直在用aTimeLogger监控一整天时间消耗的情况，可是缺点很明显，这个监控模式不太稳定，哪天稍微一摆烂就会放弃记录时间，提速的意识也会变淡。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640-16555173516652.jpeg" alt="">
+
+</p>
+<p><em>aTimeLogger里的时间开销记录</em></p>
+<p>　　<strong>方案二</strong>给每一件事，包括小事，都设置DDL（截止时间）。</p>
+<p>　　这个方法偶尔有用，但大部分时间没用。因为DDL是我状态支棱的时候设定的规则，但当我状态不好的时候，并没有理智和意志力去遵守规则。</p>
+<p>　　这两种方案失败的路径都是一样的，只有自己状态好的时候做得到，稍微一摆烂，习惯就断了。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640-16555173516653.png" alt="">
+
+</p>
+<p>　　2月底做月总结的时候，我专门把这两件事揪了出来，看看为什么会失败？</p>
+<p>　　于是发现了它们的共同特点：这些事都是不做的话眼下不会有危害，但做的话，好处都在未来。</p>
+<p>　　也就是说，它们都是属于“没有即时的好处”的事情。</p>
+<p>　　说得简单点，就是<strong>我很清楚做了它会对自己有好处，但是就算我不做，当下我也不会遭到什么严重的恶果。</strong></p>
+<p>　　我知道每天一遍颈椎操对自己有好处，但是就算我没做，也不会今天立刻就疼得受不了。</p>
+<p>　　然后你就会发现，其实<strong>控制食欲、坚持运动、优化学习方法、优化工作流程</strong>等等都属于这种事。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640-16555173516654.jpeg" alt="">
+
+</p>
+<p>　　你想养成的绝大多数好习惯，想完成的绝大多数目标都属于这种性质。就算你不干的话，当下也没啥恶果。</p>
+<p>　　结果就是，<strong>对于未来泯然众人、平庸一生的恐惧，总是打不赢当下贪图安逸的心理</strong>，这是进化论带来的人类的出厂设置，改不掉的。</p>
+<p>　　所以尽管你知道他们有用，它们也没有足够的吸引力让你每天都坚持。</p>
+<p>　　想到了这里，我在尝试第3个方案的时候，终于不再和人性硬刚了，而是采用了在《掌控习惯》中学到了<strong>习惯4大定律</strong>。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220618095642.jpg" alt="微信图片_20220618095642">
+
+</p>
+<p>　　ps.书中的这个图可以先保存起来，看完文章后再慢慢看</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/image-20220618100139593.png" alt="image-20220618100139593">
+
+</p>
+<p>　　在这4大定律中，我终于发现了之前失败的地方在于第2步和第4步。</p>
+<p>　　<strong>第2步，把习惯变得有吸引力</strong>。很明显，那两件事没有任何吸引力……大多数有价值的事多多少少都费劲。</p>
+<p>　　所以我利用了作者提到的「喜好绑定法」，<strong>当你要养成某个习惯时，就把它和一个你喜欢做的事绑定在一起。</strong></p>
+<p>　　比如最近每天做颈椎操的时候，我就打开B站听罗翔讲段子。为了听到张三的“事迹”，颈椎操每天都没停……</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640-16555173516657.jpeg" alt="">
+
+</p>
+<p>　　同样，出了问题的还有<strong>第4步，奖励。</strong></p>
+<p>　　之前我觉得，做事情还要奖励？那是小学生才干的事（对不起我真香了……）</p>
+<p>　　<strong>我经常完成了一天的目标但是仍然感觉不到成就感，只觉得自己是个工作机器</strong>，原因就是哪怕完成了目标也没什么奖励让自己爽一爽。</p>
+<p>　　但最近我给自己设置了各种奖励：</p>
+<p>　　如果当天完成各种习惯和打卡任务的话，晚上就可以打半小时麻将，豆豆输光了还允许充钱继续打~</p>
+<p>　　如果一周7天有6天都完成了，那周末就去大保健（正儿八经的大保健~）。</p>
+<p>　　当一件事有了足够的吸引力作为动机，又有了带来满足感的奖励，<strong>我从3月初开始到现在打卡还没失败过。</strong></p>
+<p>　　可惜深圳疫情的缘故，大保健只去过一次，麻将水平倒是进步了不少……</p>
+<p>　　你也可以把4大定律套用到自己想养成的习惯中，被你疏忽的步骤，往往就是习惯难以坚持的关键。</p>
+<p>
+  <img src="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/640-16555173516658.jpeg" alt="">
+
+</p>
+<p>　　<strong>「写在最后」</strong></p>
+<p>　　最后你可能觉得，“开尼玛玩笑呢，难道要一直靠奖励吊着，才能做事？”</p>
+<p>　　其实我亲测验证了作者的一句话：</p>
+<p>　　<strong>最终，随着内在奖励，如心情舒畅、精力旺盛和身心放松之类相继到来，你不再一心追求次要奖励</strong>。你的新身份本身就变成了强化者。奖励可以启动一种习惯的培养进程，而身份则可以维持一种习惯。</p>
+<p>　　也就是说，奖励只是初期帮你养成习惯。</p>
+<p>　　对于我来说，现在我做事确实快了不少，我觉得自己已经成了“做事利索”的人，自然就不用再靠外界奖励驱动习惯。</p>
+<p>　　至于颈椎操，那就靠奖励吊着把，反正我本来也想听罗翔讲段子，想打几把麻将……</p>
+<p><strong>-END-</strong></p>
+<h2 id="随想">随想</h2>
+<p>　　最后感叹，奖励、激励与惩罚的重要性，类比于强化学习，越发觉得数学与编程技术之神奇.同时也希望有那么一天，我的模型也能变为内心强大，不在一心追求奖励的强者。</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/readme/" data-toggle="tooltip" data-placement="top" title="Clean White Theme for Hugo">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/04/18/Toy/campus-network/" data-toggle="tooltip" data-placement="top" title="Improve the access speed of campus network">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+<script src="https://giscus.app/client.js"
+        data-repo=""
+        data-repo-id=""
+        data-category=""
+        data-category-id=""
+        data-mapping=""
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-theme=""
+        data-lang=""
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/inspired" title="inspired">
+                            inspired
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/java" title="java">
+                            java
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/math" title="math">
+                            math
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/network" title="network">
+                            network
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nginx" title="nginx">
+                            nginx
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/p4" title="p4">
+                            p4
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/philosophy" title="philosophy">
+                            philosophy
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/scripts" title="scripts">
+                            scripts
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:cbyhlc@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/BoyuCai4">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/wechat_qrcode%20.jpg">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/dmucby">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.cn/incareer/in/boyu-cai-141484227">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/17031721/dmu-cby">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Boyu Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Boyu Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>
