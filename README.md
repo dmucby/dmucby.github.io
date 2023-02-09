@@ -65,6 +65,12 @@ address: [Boyu Blog](https://dmucby.github.io/)
 
 5. 访问本地链接：http://localhost:1313/
 
+6. 生成`Html` 页面
+
+   ```powershell
+   > hugo
+   ```
+
 ### launched
 
 * 域名购买

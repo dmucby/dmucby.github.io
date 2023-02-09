@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tops on Boyu Blog</title>
-    <link>http://www.caiboyu.online/top/</link>
+    <link>https://dmucby.github.io/top/</link>
     <description>Recent content in Tops on Boyu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://www.caiboyu.online/top/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://dmucby.github.io/top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://www.caiboyu.online/top/about/</link>
+      <link>https://dmucby.github.io/top/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.caiboyu.online/top/about/</guid>
-      <description>Boyu Cai is a Dalian Maritime University sophomore. He is interested in the software development and he is studying Java hard and hopes to find relevant internships.
+      <guid>https://dmucby.github.io/top/about/</guid>
+      <description>Boyu Cai is a Dalian Maritime University students. He is interested in the software development and he is studying Java hard and hopes to find relevant internships.
 Profile
 　He is happy with his current study, but also willing to take new challenges if the opportunity matches his interest. And he likes to make like-minded friends.
 Hobby
@@ -21,19 +21,19 @@ Hobby
     
     <item>
       <title></title>
-      <link>http://www.caiboyu.online/top/books/catalogue/</link>
+      <link>https://dmucby.github.io/top/books/catalogue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.caiboyu.online/top/books/catalogue/</guid>
+      <guid>https://dmucby.github.io/top/books/catalogue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posts Archive</title>
-      <link>http://www.caiboyu.online/top/archive/</link>
+      <link>https://dmucby.github.io/top/archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.caiboyu.online/top/archive/</guid>
+      <guid>https://dmucby.github.io/top/archive/</guid>
       <description></description>
     </item>
     

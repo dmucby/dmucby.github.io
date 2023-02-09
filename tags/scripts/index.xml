@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripts on Boyu Blog</title>
-    <link>http://www.caiboyu.online/tags/scripts/</link>
+    <link>https://dmucby.github.io/tags/scripts/</link>
     <description>Recent content in Scripts on Boyu Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Apr 2022 15:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2022 15:00:00 +0000</lastBuildDate><atom:link href="https://dmucby.github.io/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Script Study</title>
-      <link>http://www.caiboyu.online/2022/04/18/script/python/</link>
+      <link>https://dmucby.github.io/2022/04/18/script/python/</link>
       <pubDate>Mon, 18 Apr 2022 15:00:00 +0000</pubDate>
       
-      <guid>http://www.caiboyu.online/2022/04/18/script/python/</guid>
+      <guid>https://dmucby.github.io/2022/04/18/script/python/</guid>
       <description>Python Script 核心语法 注释 #!/usr/bin/python3 # 第一个注释 &amp;#39;&amp;#39;&amp;#39; 注释 &amp;#39;&amp;#39;&amp;#39; print(&amp;#34;Hello,Python!&amp;#34;) 复杂项目 长期维护 输入输出 python实现 str = input(&amp;#34;please input:&amp;#34;) print() bash实现 echo &amp;#34;please input&amp;#34; read str if逻辑 if command: x elif command2: y else: 文件读</description>
     </item>
     
     <item>
       <title>Shell Script Study</title>
-      <link>http://www.caiboyu.online/2022/04/18/script/shell/</link>
+      <link>https://dmucby.github.io/2022/04/18/script/shell/</link>
       <pubDate>Mon, 18 Apr 2022 15:00:00 +0000</pubDate>
       
-      <guid>http://www.caiboyu.online/2022/04/18/script/shell/</guid>
+      <guid>https://dmucby.github.io/2022/04/18/script/shell/</guid>
       <description>Shell Shell 简介 Linux 系统界面，而不涉及到Linux内核 shell 脚本 = shell命令+ shell特性 + 流程控制 流程 用户输入命令 解释命令 在内核中执行然后返回结果</description>
     </item>
     
