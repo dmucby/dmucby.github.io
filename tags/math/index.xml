@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on Boyu Blog</title>
+    <link>http://www.caiboyu.online/tags/math/</link>
+    <description>Recent content in Math on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information Entropy</title>
+      <link>http://www.caiboyu.online/2022/6/27/Math/Pleasing/Entropy/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/27/Math/Pleasing/Entropy/</guid>
+      <description>Information Entropy QA 或许一直都有一个疑问，升入大学信息是一个非常宝贵的财富，我们都知道某些关键的信息或许真能改变一生，但是我们如何分辨哪些是关键信息，或者</description>
+    </item>
+    
+    <item>
+      <title>Hidden Markov Model</title>
+      <link>http://www.caiboyu.online/2022/6/16/Math/Pleasing/HMM/</link>
+      <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/6/16/Math/Pleasing/HMM/</guid>
+      <description>Hidden Markov Model 在哲学的意义上，这是人类认识的一个飞跃！ 马尔可夫模型是一个并不复杂，且在自然语言处理领域最为快捷有效的方法，它通过概率的计算解决了生活</description>
+    </item>
+    
+  </channel>
+</rss>

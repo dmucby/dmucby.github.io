@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P4 on Boyu Blog</title>
+    <link>http://www.caiboyu.online/tags/p4/</link>
+    <description>Recent content in P4 on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/p4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>P4 DDoS Defense</title>
+      <link>http://www.caiboyu.online/2022/04/18/P4/SYN&#43;ECMP/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/18/P4/SYN&#43;ECMP/</guid>
+      <description>SYN+ ECMP Idea ECMP: 根据数据包传输路径和地址来计算哈希值，并对哈希值进行求模运算，将值与端口进行映射，来达到随机情况下的链路数据包的负载均衡。 SYN Defense 基于P</description>
+    </item>
+    
+  </channel>
+</rss>

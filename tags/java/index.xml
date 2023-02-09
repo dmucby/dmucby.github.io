@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Boyu Blog</title>
+    <link>http://www.caiboyu.online/tags/java/</link>
+    <description>Recent content in Java on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Apr 2022 12:58:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iterator Design</title>
+      <link>http://www.caiboyu.online/2022/04/28/java-Design-pattern-Iterator/</link>
+      <pubDate>Thu, 28 Apr 2022 12:58:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/2022/04/28/java-Design-pattern-Iterator/</guid>
+      <description>迭代器模式 核心思想 提供外部访问接口，而不暴露内部对象 可扩展的遍历方式 可遍历不同种类的对象 类图设计 Aggregate：聚集的抽象类 Concre</description>
+    </item>
+    
+  </channel>
+</rss>

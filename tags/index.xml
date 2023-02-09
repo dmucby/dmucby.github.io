@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Boyu Blog</title>
+    <link>http://www.caiboyu.online/tags/</link>
+    <description>Recent content in Tags on Boyu Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.caiboyu.online/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math</title>
+      <link>http://www.caiboyu.online/tags/math/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://www.caiboyu.online/tags/nginx/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>philosophy</title>
+      <link>http://www.caiboyu.online/tags/philosophy/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>P4</title>
+      <link>http://www.caiboyu.online/tags/p4/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/p4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://www.caiboyu.online/tags/java/</link>
+      <pubDate>Thu, 28 Apr 2022 12:58:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scripts</title>
+      <link>http://www.caiboyu.online/tags/scripts/</link>
+      <pubDate>Mon, 18 Apr 2022 15:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://www.caiboyu.online/tags/network/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inspired</title>
+      <link>http://www.caiboyu.online/tags/inspired/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.caiboyu.online/tags/inspired/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
