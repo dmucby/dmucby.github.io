@@ -36,7 +36,7 @@ body {
   color: var(--text);
   background: #fff;
   font-family: "Lato", Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -135,7 +135,7 @@ h2 {
 
 .publication {
   display: grid;
-  grid-template-columns: 192px 1fr;
+  grid-template-columns: 224px 1fr;
   min-height: 192px;
   align-items: center;
 }
@@ -146,9 +146,9 @@ h2 {
 
 .publication-media {
   display: block;
-  width: 160px;
-  height: 160px;
-  margin: 16px;
+  width: 208px;
+  height: 152px;
+  margin: 16px 8px;
   overflow: hidden;
   background: #fff;
 }
@@ -181,6 +181,7 @@ h2 {
 }
 
 .authors,
+.author-note,
 .venue,
 .paper-links,
 .summary {
@@ -189,6 +190,19 @@ h2 {
 
 .authors strong {
   font-weight: 700;
+}
+
+.authors sup,
+.author-note sup {
+  position: relative;
+  top: -0.15em;
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+.author-note {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .paper-links {
@@ -267,7 +281,7 @@ footer {
 
   .publication-media {
     width: 112px;
-    height: 112px;
+    height: 90px;
     margin: 10px;
   }
 
@@ -289,7 +303,7 @@ footer {
   .publication-media {
     width: min(100%, 240px);
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 4 / 3;
     margin: 0 auto 14px;
   }
 
