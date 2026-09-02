@@ -1,755 +1,268 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        processEscapes: true
-      }
-    });
-</script>
-
-<script src='https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body);
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body);
-    });
-</script>
-<head>
-	<meta name="generator" content="Hugo 0.96.0" />
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Boyu Cai">
+    <meta
+      name="description"
+      content="Boyu Cai is a computer vision and embodied intelligence researcher working on open-vocabulary understanding, dynamic 3D vision, and vision-language-action models."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Boyu Cai">
+    <meta
+      property="og:description"
+      content="Research in embodied intelligence, 3D vision, and vision-language models."
+    >
+    <link rel="canonical" href="https://dmucby.github.io/">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Boyu Cai</title>
+  </head>
 
-    
-    <meta property="og:site_name" content="Boyu Blog">
-    <meta property="og:type" content="article">
+  <body>
+    <main class="page-shell">
+      <header class="profile">
+        <div class="profile-copy">
+          <h1>Boyu Cai</h1>
 
-    
-    <meta property="og:image" content="https://dmucby.github.io//img/pexels-pixabay-462024.jpg">
-    <meta property="twitter:image" content="https://dmucby.github.io//img/pexels-pixabay-462024.jpg" />
-    
+          <p>
+            I am a joint M.S. student in Computer Science at
+            <a href="https://www.shanghaitech.edu.cn/eng/" rel="noreferrer">ShanghaiTech University</a>
+            and the
+            <a href="http://english.ia.cas.cn/" rel="noreferrer">Institute of Automation, Chinese Academy of Sciences</a>,
+            advised by
+            <a href="http://weiminghu.people-ai.net/" rel="noreferrer">Weiming Hu</a>,
+            <a href="https://decayale.github.io/" rel="noreferrer">Yan Xu</a>, and
+            <a href="https://scholar.google.com/citations?user=smjlgPgAAAAJ&amp;hl=en" rel="noreferrer">Li Yang</a>.
+            I received my B.S. in Software Engineering from
+            <a href="https://english.dlmu.edu.cn/" rel="noreferrer">Dalian Maritime University</a>.
+          </p>
 
-    
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
-    
+          <p>
+            My research focuses on learning generalizable visual representations for understanding
+            open and dynamic environments. I work across fine-grained open-vocabulary semantics,
+            dynamic 3D scene representation, and language-grounded robot learning, with broader
+            interests in embodied intelligence, 3D vision, and vision-language-action models.
+          </p>
 
-    
-    <meta name="description" content="蔡博宇，程序员, 开源爱好者，生活探险家 | 这里是 蔡博宇 的博客，与你一起发现更大的世界。">
-    <meta property="og:description" content="蔡博宇，程序员, 开源爱好者，生活探险家 | 这里是 蔡博宇 的博客，与你一起发现更大的世界。" />
-    <meta property="twitter:description" content="蔡博宇，程序员, 开源爱好者，生活探险家 | 这里是 蔡博宇 的博客，与你一起发现更大的世界。" />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="蔡博宇, caiboyu, Caiboyu, Caiboyu Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>Boyu Blog-蔡博宇的博客 | Caiboyu Blog</title>
-
-    <link rel="canonical" href="/">
-
-    
-    
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
-
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-
-    
-    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
-
-    
-    
-
-    
-    <script src="/js/jquery.min.js"></script>
-
-    
-    <script src="/js/bootstrap.min.js"></script>
-
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    
-
-</head>
-
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-
-    <div class="container-fluid">
-        
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Boyu Blog</a>
+          <nav class="profile-links" aria-label="Profile links">
+            <a href="mailto:caiby2024@shanghaitech.edu.cn">Email</a>
+            <span aria-hidden="true">/</span>
+            <a href="Boyu_Cai_CV.pdf">CV</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://scholar.google.com/citations?user=C0E4MT8AAAAJ&amp;hl=en" rel="noreferrer">Scholar</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://github.com/dmucby" rel="noreferrer">GitHub</a>
+          </nav>
         </div>
 
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">All Posts</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/power">power</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/speech">speech</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/tech">tech</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/toy">toy</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/top/archive/">ARCHIVE</a></li>
-                    
-                        <li><a href="/top/about/">ABOUT</a></li>
-                    
-
-                    
-		    <li>
-                        <a href="/search"><i class="fa fa-search"></i></a>
-		    </li>
-                    
-                </ul>
-            </div>
+        <div class="profile-photo-wrap">
+          <a href="images/profile.jpg" aria-label="Open Boyu Cai's profile photo">
+            <img
+              class="profile-photo"
+              src="images/profile.jpg"
+              alt="Boyu Cai"
+              width="512"
+              height="512"
+            >
+          </a>
         </div>
-        
-    </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+      </header>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        
-            $navbar.className = " ";
-            
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-
-<header class="intro-header" style="background-image: url('/img/pexels-pixabay-462024.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Boyu Blog </h1>
-                    
-		    <span class="subheading">Stay Hungry Stay Foolish,Keep Looking And Don’t Settle</span>
-                </div>
-            </div>
+      <section class="research" aria-labelledby="research-heading">
+        <div class="section-intro">
+          <h2 id="research-heading">Research</h2>
+          <p>
+            I am interested in using language as transferable semantic knowledge across vision,
+            3D, and embodied intelligence. My recent work studies open-vocabulary visual
+            understanding, robust photometric-semantic reconstruction in dynamic scenes, and
+            instruction-grounded VLA policies. Selected works are <span class="highlight-key">highlighted</span>.
+          </p>
         </div>
-    </div>
-</header>
 
-
-
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-
-<div class="post-preview">
-    <a href="https://dmucby.github.io/2022/6/27/Math/Pleasing/Entropy/">
-        <h2 class="post-title">
-            Information Entropy
-        </h2>
-	
-        <h3 class="post-subtitle">
-            信息的度量和作用
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            信息论之父所提出信息熵等相关概念简介
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by 蔡博宇 on Monday, June 27, 2022
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://dmucby.github.io/2022/6/16/Math/Pleasing/HMM/">
-        <h2 class="post-title">
-            Hidden Markov Model
-        </h2>
-	
-        <h3 class="post-subtitle">
-            HMM隐马尔科夫模型与编码器解码器
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            用通信模型来应用马尔可夫模型在机器学习自然语言处理等领域
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by 蔡博宇 on Saturday, June 18, 2022
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://dmucby.github.io/2022/6/16/Nginx/RTMP/">
-        <h2 class="post-title">
-            RTMP
-        </h2>
-	
-        <h3 class="post-subtitle">
-            RTMP推流简单介绍与部署
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            将视频信息推流与图像传输部署在服务器上用于硬件服务
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by 蔡博宇 on Thursday, June 16, 2022
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://dmucby.github.io/2022/5/20/Spech/RTMP/">
-        <h2 class="post-title">
-            Saty Hungry Stay Foolish
-        </h2>
-	
-        <h3 class="post-subtitle">
-            Steve Jobs 2005 Stanford Commencement Address
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            2005年的夏天，史蒂夫乔布斯(Steve Jobs)受邀在斯坦福大学的毕业典礼上发表演讲。
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Steve Jobs on Friday, May 20, 2022
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://dmucby.github.io/2022/04/18/P4/SYN&#43;ECMP/">
-        <h2 class="post-title">
-            P4 DDoS Defense
-        </h2>
-	
-        <h3 class="post-subtitle">
-            SYN-Flood Defense based P4
-        </h3>
-	
-        <div class="post-content-preview">
-	
-            基于P4的DDoS跳变流量清洗数据
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    
-        Posted by Boyu Cai on Saturday, April 30, 2022
-        
-        
-    
-    </p>
-
-</div>
-<hr>
-
-
-            
-
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/caiboyu2.png" alt="avatar" style="cursor: pointer" />
+        <div class="publication-list">
+          <article class="publication is-highlighted">
+            <a class="publication-media" href="https://arxiv.org/abs/2608.29177" aria-label="Open the SPAR paper">
+              <img
+                src="images/publications/spar.png"
+                alt="SPAR reconstructs clean photometric and semantic novel views from dynamic observations"
+                width="320"
+                height="320"
+              >
             </a>
-            
-            
-                <p>Software Developer, Open Source Enthusiast and Life Adventurer</p>
-            
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:cbyhlc@gmail.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a href="https://twitter.com/BoyuCai4">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/wechat_qrcode%20.jpg">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/dmucby">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://www.linkedin.cn/incareer/in/boyu-cai-141484227">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/17031721/dmu-cby">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-            
-               
-               
-               
-               
-                </ul>
+            <div class="publication-copy">
+              <a class="paper-title" href="https://arxiv.org/abs/2608.29177">
+                Dynamic-Robust Photometric-Semantic Reconstruction for Open-Vocabulary 3D Scene Understanding
+              </a>
+              <p class="authors">
+                <strong>Boyu Cai</strong>,
+                <a href="https://scholar.google.com/citations?user=smjlgPgAAAAJ&amp;hl=en">Li Yang</a>,
+                <a href="https://decayale.github.io/">Yan Xu</a>,
+                Wei Liu, Nian Liu, Sikui Zhang, Yan Wang, Chunfeng Yuan, Weiming Hu
+              </p>
+              <p class="venue"><em>ECCV</em>, 2026</p>
+              <p class="paper-links">
+                <a href="https://eccv.ecva.net/virtual/2026/poster/5806">project page</a>
+                <span>/</span>
+                <a href="https://arxiv.org/abs/2608.29177">arXiv</a>
+                <span>/</span>
+                <a href="https://github.com/dmucby/SPAR">code</a>
+              </p>
+              <p class="summary">
+                SPAR jointly reconstructs photometric and open-vocabulary semantic scene content
+                from sparse, unposed, and dynamic observations without explicit 3D supervision or
+                ground-truth motion masks.
+              </p>
             </div>
-    </section>
-	
-    
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            
-            
-               
-                    <a href="/tags/inspired" title="inspired">
-                        inspired
-                    </a>
-               
-            
-               
-                    <a href="/tags/java" title="java">
-                        java
-                    </a>
-               
-            
-               
-                    <a href="/tags/math" title="math">
-                        math
-                    </a>
-               
-            
-               
-                    <a href="/tags/network" title="network">
-                        network
-                    </a>
-               
-            
-               
-                    <a href="/tags/nginx" title="nginx">
-                        nginx
-                    </a>
-               
-            
-               
-                    <a href="/tags/p4" title="p4">
-                        p4
-                    </a>
-               
-            
-               
-                    <a href="/tags/philosophy" title="philosophy">
-                        philosophy
-                    </a>
-               
-            
-               
-                    <a href="/tags/scripts" title="scripts">
-                        scripts
-                    </a>
-               
-            
-        </div>
-    </section>
-    
+          </article>
 
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">                  
-                    
-                    <li>
-                        <a href="mailto:cbyhlc@gmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    <li>
-                        <a href="https://twitter.com/BoyuCai4">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-
-		            
-                    
-                    <li>
-                        <a target="_blank" href="https://personal-drawing-bed.oss-cn-beijing.aliyuncs.com/img/wechat_qrcode%20.jpg">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/dmucby">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.cn/incareer/in/boyu-cai-141484227">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/17031721/dmu-cby">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-            
-            
-            
-           
-                   <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="Boyu Blog" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fas fa-circle fa-stack-2x"></i>
-                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-            
-             </ul>
-		<p class="copyright text-muted">
-                    Copyright &copy; Boyu Blog 2023
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
-                </p>
+          <article class="publication">
+            <a
+              class="publication-media"
+              href="https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html"
+              aria-label="Open the SRA-Det paper"
+            >
+              <img
+                src="images/publications/sra-det.png"
+                alt="SRA-Det distinguishes fine-grained object descriptions through semantic retrieval augmentation"
+                width="320"
+                height="320"
+                loading="lazy"
+              >
+            </a>
+            <div class="publication-copy">
+              <a
+                class="paper-title"
+                href="https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html"
+              >
+                SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names
+              </a>
+              <p class="authors">
+                Li Yang, <strong>Boyu Cai</strong>, Wei Liu, Yan Wang, Chunfeng Yuan, Bing Li, Weiming Hu
+              </p>
+              <p class="venue"><em>CVPR</em>, 2026</p>
+              <p class="paper-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html">paper</a>
+                <span>/</span>
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.pdf">pdf</a>
+              </p>
+              <p class="summary">
+                SRA-Det retrieves multiple semantic facets from token-level text features and uses
+                attribute-augmented data to improve fine-grained open-vocabulary detection.
+              </p>
             </div>
+          </article>
+
+          <article class="publication">
+            <a
+              class="publication-media"
+              href="https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Temporal_Representation_Enhancement_TRE_Learning_to_Forget_Dominant_Patterns_for_CVPR_2026_paper.html"
+              aria-label="Open the TRE paper"
+            >
+              <img
+                src="images/publications/tre.png"
+                alt="TRE improves temporal feature diversity in spiking neural networks"
+                width="320"
+                height="320"
+                loading="lazy"
+              >
+            </a>
+            <div class="publication-copy">
+              <a
+                class="paper-title"
+                href="https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Temporal_Representation_Enhancement_TRE_Learning_to_Forget_Dominant_Patterns_for_CVPR_2026_paper.html"
+              >
+                Temporal Representation Enhancement: Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features
+              </a>
+              <p class="authors">
+                Wei Liu, Li Yang, Yufei Wang, Han Xiao, <strong>Boyu Cai</strong>, Weiming Hu
+              </p>
+              <p class="venue"><em>CVPR</em>, 2026</p>
+              <p class="paper-links">
+                <a href="https://cvpr.thecvf.com/virtual/2026/poster/37392">project page</a>
+                <span>/</span>
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_Temporal_Representation_Enhancement_TRE_Learning_to_Forget_Dominant_Patterns_for_CVPR_2026_paper.pdf">pdf</a>
+              </p>
+              <p class="summary">
+                TRE selectively suppresses dominant temporal patterns so spiking neural networks
+                learn more diverse and complementary features across timesteps.
+              </p>
+            </div>
+          </article>
+
+          <article class="publication is-highlighted">
+            <a class="publication-media" href="https://ieeexplore.ieee.org/document/10879090" aria-label="Open the GMT paper">
+              <img
+                src="images/publications/gmt.png"
+                alt="IEEE Xplore page for Focus More on What? Guiding Multi-Task Training for End-to-End Person Search"
+                width="320"
+                height="320"
+                loading="lazy"
+              >
+            </a>
+            <div class="publication-copy">
+              <a class="paper-title" href="https://ieeexplore.ieee.org/document/10879090">
+                Focus More on What? Guiding Multi-Task Training for End-to-End Person Search
+              </a>
+              <p class="authors">
+                <strong>Boyu Cai</strong>, Huibing Wang, Mingze Yao, Xianping Fu
+              </p>
+              <p class="venue"><em>IEEE Transactions on Circuits and Systems for Video Technology</em>, 2025</p>
+              <p class="paper-links">
+                <a href="https://ieeexplore.ieee.org/document/10879090">paper</a>
+                <span>/</span>
+                <a href="https://doi.org/10.1109/TCSVT.2025.3540089">doi</a>
+              </p>
+              <p class="summary">
+                A guiding multi-task framework addresses imbalanced and conflicting optimization
+                between detection and re-identification in end-to-end person search.
+              </p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <a
+              class="publication-media"
+              href="https://ojs.aaai.org/index.php/AAAI/article/view/32132"
+              aria-label="Open the TSE paper"
+            >
+              <img
+                src="images/publications/tse.png"
+                alt="Temporal-Self-Erasing supervision shifts attention across timesteps in a spiking neural network"
+                width="320"
+                height="320"
+                loading="lazy"
+              >
+            </a>
+            <div class="publication-copy">
+              <a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/32132">
+                Towards More Discriminative Feature Learning in SNNs with Temporal-Self-Erasing Supervision
+              </a>
+              <p class="authors">
+                Wei Liu, Li Yang, Mingxuan Zhao, Dengfeng Xue, Shuxun Wang,
+                <strong>Boyu Cai</strong>, Jin Gao, Wenjuan Li, Bing Li, Weiming Hu
+              </p>
+              <p class="venue"><em>AAAI</em>, 2025</p>
+              <p class="paper-links">
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32132">paper</a>
+                <span>/</span>
+                <a href="https://doi.org/10.1609/aaai.v39i2.32132">doi</a>
+              </p>
+              <p class="summary">
+                Temporal-Self-Erasing supervision dynamically suppresses previously activated
+                regions, encouraging complementary and more discriminative features over time.
+              </p>
+            </div>
+          </article>
         </div>
-    </div>
-</footer>
+      </section>
 
-
-
-
-<script>
-    function loadAsync(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        loadAsync("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-    function generateCatalog(selector) {
-
-        
-        
-        
-        
-            _containerSelector = 'div.post-container'
-        
-
-        
-        var P = $(_containerSelector), a, n, t, l, i, c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-
-        
-        $(selector).html('')
-
-        
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#" + $(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
-            l = $('<li class="' + n + '_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;
-    }
-
-    generateCatalog(".catalog-body");
-
-    
-    $(".catalog-toggle").click((function (e) {
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    
-
-
-    loadAsync("\/js\/jquery.nav.js", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
-</script>
-
-
-</body>
+      <footer>
+        <p>
+          Last updated September 2026. Design inspired by
+          <a href="https://jonbarron.info/">Jon Barron's academic homepage</a>.
+        </p>
+      </footer>
+    </main>
+  </body>
 </html>
