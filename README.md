@@ -6,7 +6,7 @@ The layout is inspired by [Jon Barron's academic homepage](https://jonbarron.inf
 
 ## Publication assets
 
-- `spar.png`: Fig. 2 method overview from the [SPAR paper](https://arxiv.org/abs/2608.29177).
+- `spar.png`: Fig. 1 teaser from the [SPAR paper](https://arxiv.org/abs/2608.29177).
 - `sra-det.png`: Fig. 2 method overview from the [official CVF paper](https://openaccess.thecvf.com/content/CVPR2026/html/Yang_SRA-Det_Learning_Omni-Grained_Open-Vocabulary_Detection_Beyond_Category_Names_CVPR_2026_paper.html).
 - `tre.png`: Fig. 2 method overview from the [official CVF paper](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Temporal_Representation_Enhancement_TRE_Learning_to_Forget_Dominant_Patterns_for_CVPR_2026_paper.html).
 - `gmt.png`: Fig. 2 method overview from the [official IEEE Xplore paper](https://ieeexplore.ieee.org/document/10879090).

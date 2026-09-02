@@ -68,7 +68,8 @@ p {
 
 .profile {
   display: grid;
-  grid-template-columns: 63fr 37fr;
+  grid-template-columns: minmax(0, 1fr) 208px;
+  column-gap: 20px;
   align-items: center;
 }
 
@@ -109,6 +110,9 @@ h2 {
 
 .profile-photo-wrap {
   width: 100%;
+  max-width: 188px;
+  justify-self: center;
+  padding: 0;
 }
 
 .profile-photo {
@@ -247,9 +251,9 @@ footer {
 
   .profile-photo-wrap {
     order: 1;
-    max-width: 250px;
-    margin: 18px auto 0;
-    padding: 16px;
+    max-width: 168px;
+    margin: 26px auto 0;
+    padding: 0;
   }
 
   h1 {
